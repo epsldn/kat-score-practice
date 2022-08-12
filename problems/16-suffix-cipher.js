@@ -22,16 +22,16 @@ be modified. You can assume that only one suffix of the object will match a word
 *******************************************************************************/
 
 let suffixCipher = function (sentence, object) {
-    let words = sentence.split(" ");
-
-    let result = words.map((word) => {
-        for (let key in object){
-            if (word.endsWith([key])) return object[key](word)
+    let words = sentence.split(" ")
+    let endOf = words.map(function(word) {
+    for (let key in object) {
+        if (word.endsWith([key])){
+            return object[key](word)
         }
-        return word
-    })
-
-    return result.join(" ");
+    }
+    return word
+})
+    return endOf.join(" ")
 };
 
 let cipher1 = {
