@@ -13,11 +13,11 @@ Do not use the built in Array#every.
 *******************************************************************************/
 
 let myEvery = function (array, cb) {
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        if (cb(element) === false) return false
-    }
-    return true;
+    let isTrue = true
+    array.forEach(function(element){
+       if (!cb (element)) isTrue = false;
+    });
+    return isTrue
 };
 
 
